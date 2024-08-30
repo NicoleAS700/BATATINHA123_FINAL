@@ -1,17 +1,27 @@
-import { Button } from 'primereact/button';
+import { BrowserRouter, Link } from 'react-router-dom'
+import AppRoutes from './Routes/Index'
+import { Button } from 'primereact/button'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1 className='lg:bg-[#e76857] md:bg-[#8e57e7] sm:bg-[#6fe757] bg-[#57a1e7] px-4 py-8 border-4 border-solid rounded border-black text-white'>Projeto Final 2024</h1>
+      <BrowserRouter>
+        <h1 className='lg:bg-[#0096D6] md:bg-orange-400 sm:bg-green-400 bg-slate-400 px-4 py-8 border-4 border-solid rounded border-black text-white '>
 
-      <Button 
-        label="SuperStar" 
-        icon= "pi pi-star-fill"
-        severity= "success"
-      />
+          <Link className='p-2 hover:underline' to= "/"> Home </Link>
+          <Link className='p-2 hover:underline' to= "/departamentos"> Departamentos </Link>
+
+        </h1>
+
+        <div className='w=full max-w-[calc(100vw-16px)] md:max-w-[1280px] mx-auto mt-6'>
+            <div className='grid grid-cols-12 gap-1'>
+        <AppRoutes/>
+            </div>
+        </div>
+
+      </BrowserRouter>
     </>
   )
 }
